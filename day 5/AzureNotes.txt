@@ -1,0 +1,56 @@
+
+⭐ 3. Azure Flash Drills
+
+✔ Managed Identity = best practice
+
+✔ Dataset = describes file/folder
+
+✔ Integration Runtime = compute engine
+
+✔ Schedule Trigger = run every X hours
+
+✔ Retry settings = configured on the activity (not pipeline)
+
+⸻
+
+⭐ 4. ADF Deep Dive Notes
+
+✔ Wildcards
+
+raw/sales/2025/02/01/*.csv
+
+✔ Parameterized filename
+
+transactions_@{dataset().date}.csv
+
+✔ Parameterized folder + wildcard filename
+
+raw/sales/@{dataset().year}/@{dataset().month}/@{dataset().day}/*.csv
+
+✔ ForEach = per-file logic
+
+✔ Wildcard = batch logic
+
+⸻
+
+⭐ 5. Metadata-Driven Ingestion (Key Skill)
+
+Metadata table example:
+
+source_name	  container	      folder 	  file_pattern
+sales           raw      sales/2025/02/01   sales_*.csv
+hr	            raw	        hr/2025/02/01	hr_*.csv
+
+Correct way to access metadata inside ForEach:
+
+@item().file_pattern
+
+ADF pattern:
+
+Lookup → ForEach → dynamic Copy → optional Databricks → output
+
+⸻
+
+✅ End of Day 5 Summary
+
+⸻
