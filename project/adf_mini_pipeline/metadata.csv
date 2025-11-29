@@ -1,0 +1,3 @@
+source_name,folder_path,file_pattern,target_zone
+sales,raw/sales/,sales_*.csv,processed
+customers,raw/customers/,cust_*.csv,processed
